@@ -2,6 +2,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   padding: 0;
   background-color: black;
   color: white;
+  max-height: 100vh;
 }
 
 nav {
@@ -17,16 +19,22 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  height: 70px;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   background-color: white;
   margin: auto;
-  width: 100vw;
-  height: 10vh;
-  position: fixed;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: flex;
+  align-items: center;
 }
 
 nav > ul > li {
-  display: inline-block;
   list-style: none;
   margin: 0 20px 0 20px;
   transition: 0.2s;
@@ -39,30 +47,24 @@ nav > ul > li:hover {
 nav > ul > li > a {
   text-decoration: none;
   color: black;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: 500;
   transition: 0.2s;
 }
 
 nav > ul > li > a:hover {
-  font-size: 25px;
+  font-size: 20px;
   color: #ff0000;
 }
 
 nav > ul > li > a:active {
-  font-size: 20px;
-}
-
-main {
-  display: grid;
-  place-content: center;
-  margin-bottom: 50px;
+  font-size: 18px;
 }
 
 #about {
   display: grid;
   place-content: center;
-  margin-top: 17vh;
+  margin-top: 14vh;
   margin-bottom: 50px;
   width: 100%;
   max-width: 100vw;
@@ -91,6 +93,7 @@ main {
 .about-cover > a {
   text-decoration: none;
   color: white;
+  width: 100%;
 }
 
 .about-cover > a:hover {
@@ -101,6 +104,11 @@ main {
 .nj-web:hover {
   background-color: white;
   transform: translateY(-4px);
+}
+
+.nj-web:active {
+  background-color: white;
+  transform: translateY(-0px);
 }
 
 #member {
@@ -143,9 +151,23 @@ main {
   text-align: center;
 }
 
+.images {
+  transition: 0.3s;
+}
+
+.images:hover {
+  transform: translateY(-30px);
+}
+
+.frame > a {
+  text-decoration: none;
+  color: white;
+}
+
 #song {
   margin-top: 50px;
   width: 100vw;
+  height: auto;
   display: grid;
   place-content: center;
   margin: auto;
@@ -176,4 +198,58 @@ main {
 
 .song-cover > h1 {
   margin-top: 70px;
+}
+
+.song-detail {
+  max-width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+article > .song-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-left: 2px;
+}
+
+article > .song-dur {
+  margin-top: 6px;
+  font-size: 1em;
+}
+
+article > span {
+  white-space: nowrap;
+}
+
+footer {
+  background-color: white;
+  color: black;
+  max-width: 100vw;
+  width: 100%;
+  height: 15vh;
+  display: grid;
+  place-content: center;
+  margin: auto;
+}
+
+footer > p > a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+footer > p > a:hover {
+  text-decoration: underline;
+}
+
+footer > p {
+  text-align: center;
+  margin: auto;
 }
